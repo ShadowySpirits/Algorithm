@@ -8,18 +8,29 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * A stack implement by resizing array
+ * A stack implement by Linked List
  *
  * @author ShadowySpirits
  */
-public class ResizingArrayStack<Item> implements Stack<Item> {
+public class LinkedListStack<Item> implements Stack<Item> {
 
-    private Item[] a = (Item[]) new Object[1];
+    private Node top;
     private int n;
+
+    private class Node {
+
+        Item item;
+        Node next;
+
+        Node(Item item) {
+            this.item = item;
+            next = top;
+        }
+    }
 
     @Override
     public boolean isEmpty() {
-        return n == 0;
+        return top == null;
     }
 
     @Override
@@ -27,54 +38,40 @@ public class ResizingArrayStack<Item> implements Stack<Item> {
         return n;
     }
 
-    private void resize(int len) {
-        Item[] temp = (Item[]) new Object[len];
-//        for (int i = 0; i < a.length; i++) {
-//            temp[i] = a[i];
-//        }
-        // can use System.arraycopy() to instead manual array copy.
-        System.arraycopy(a, 0, temp, 0, n);
-        a = temp;
-    }
-
     @Override
     public void push(Item item) {
-        if (n == a.length) {
-            resize(n * 2);
-        }
-        a[n++] = item;
+        top = new Node(item);
+        n++;
     }
 
     @Nullable
     @Override
     public Item pop() {
-        if (n <= 0) {
+        if (top == null) {
             return null;
         }
-        Item item = a[--n];
-        a[n] = null;
-        if (n > 0 && n < a.length / 4) {
-            resize(a.length / 2);
-        }
-        return item;
+        Node old = top;
+        top = old.next;
+        n--;
+        return old.item;
     }
 
     @Nullable
     @Override
     public Item peek() {
-        if (n <= 0) {
+        if (top == null) {
             return null;
         }
-        return a[n - 1];
+        return top.item;
     }
 
     private class ItemIterator implements Iterator<Item> {
 
-        private int i = n;
+        private Node current = top;
 
         @Override
         public boolean hasNext() {
-            return i > 0;
+            return current != null;
         }
 
         @Override
@@ -82,7 +79,9 @@ public class ResizingArrayStack<Item> implements Stack<Item> {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            return a[--i];
+            Node old = current;
+            current = old.next;
+            return old.item;
         }
     }
 
@@ -93,4 +92,3 @@ public class ResizingArrayStack<Item> implements Stack<Item> {
         return new ItemIterator();
     }
 }
-
