@@ -8,12 +8,13 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * A stack implement by resizing array
+ * A stack implement with resizing array
  *
  * @author ShadowySpirits
  */
 public class ResizingArrayStack<Item> implements Stack<Item> {
 
+    @SuppressWarnings("unchecked")
     private Item[] a = (Item[]) new Object[1];
     private int n;
 
@@ -28,6 +29,7 @@ public class ResizingArrayStack<Item> implements Stack<Item> {
     }
 
     private void resize(int len) {
+        @SuppressWarnings("unchecked")
         Item[] temp = (Item[]) new Object[len];
 //        for (int i = 0; i < a.length; i++) {
 //            temp[i] = a[i];

@@ -8,29 +8,33 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * A stack implement with Linked List
+ * A queue implement with Linked List
  *
  * @author ShadowySpirits
  */
-public class LinkedListStack<Item> implements Stack<Item> {
+public class LinkedListQueue<Item> implements Queue<Item> {
 
-    private Node top;
+    private Node first;
+    private Node last;
     private int n;
 
     private class Node {
-
         Item item;
         Node next;
 
         Node(Item item) {
             this.item = item;
-            next = top;
+            if (isEmpty()) {
+                first = last = this;
+                return;
+            }
+            last.next = this;
         }
     }
 
     @Override
     public boolean isEmpty() {
-        return top == null;
+        return first == null;
     }
 
     @Override
@@ -39,35 +43,28 @@ public class LinkedListStack<Item> implements Stack<Item> {
     }
 
     @Override
-    public void push(Item item) {
-        top = new Node(item);
+    public void enqueue(Item item) {
+        last = new Node(item);
         n++;
     }
 
     @Nullable
     @Override
-    public Item pop() {
-        if (top == null) {
+    public Item dequeue() {
+        if (isEmpty()) {
             return null;
         }
-        Node old = top;
-        top = old.next;
-        n--;
+        Node old = first;
+        first = first.next;
+        if (--n == 0) {
+            last = null;
+        }
         return old.item;
     }
 
-    @Nullable
-    @Override
-    public Item peek() {
-        if (top == null) {
-            return null;
-        }
-        return top.item;
-    }
+    private class ItemIterable implements Iterator<Item> {
 
-    private class ItemIterator implements Iterator<Item> {
-
-        private Node current = top;
+        Node current = first;
 
         @Override
         public boolean hasNext() {
@@ -90,6 +87,6 @@ public class LinkedListStack<Item> implements Stack<Item> {
     @NotNull
     @Override
     public Iterator<Item> iterator() {
-        return new ItemIterator();
+        return new ItemIterable();
     }
 }

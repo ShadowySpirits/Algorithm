@@ -2,17 +2,16 @@ package DataStructure;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * A stack implement with Linked List
+ * A bag implement with Linked List
  *
  * @author ShadowySpirits
  */
-public class LinkedListStack<Item> implements Stack<Item> {
+public class LinkedListBag<Item> implements Bag<Item> {
 
     private Node top;
     private int n;
@@ -39,30 +38,9 @@ public class LinkedListStack<Item> implements Stack<Item> {
     }
 
     @Override
-    public void push(Item item) {
+    public void add(Item item) {
         top = new Node(item);
         n++;
-    }
-
-    @Nullable
-    @Override
-    public Item pop() {
-        if (top == null) {
-            return null;
-        }
-        Node old = top;
-        top = old.next;
-        n--;
-        return old.item;
-    }
-
-    @Nullable
-    @Override
-    public Item peek() {
-        if (top == null) {
-            return null;
-        }
-        return top.item;
     }
 
     private class ItemIterator implements Iterator<Item> {
