@@ -31,13 +31,13 @@ class LinkedListQueueTest {
     @Test
     fun testEnqueue() {
         queue.enqueue(1)
-        assertEquals(queue.dequeue(), Integer.valueOf(1))
+        assertEquals(queue.dequeue(), 1)
         queue.enqueue(1)
         queue.enqueue(2)
         queue.enqueue(3)
-        assertEquals(queue.dequeue(), Integer.valueOf(1))
-        assertEquals(queue.dequeue(), Integer.valueOf(2))
-        assertEquals(queue.dequeue(), Integer.valueOf(3))
+        assertEquals(queue.dequeue(), 1)
+        assertEquals(queue.dequeue(), 2)
+        assertEquals(queue.dequeue(), 3)
     }
 
     @Test
@@ -52,7 +52,7 @@ class LinkedListQueueTest {
         queue.enqueue(2)
         queue.enqueue(3)
         for (item in queue) {
-            assertEquals(item, Integer.valueOf(i++))
+            assertEquals(item, i++)
         }
         LinkedListQueue<Int>().iterator().next()
     }

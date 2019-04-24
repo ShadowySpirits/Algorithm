@@ -40,7 +40,7 @@ class LinkedListBagTest {
         var i = 3
         testAdd()
         for (item in stack) {
-            assertEquals(item, Integer.valueOf(i--))
+            assertEquals(item, i--)
         }
         LinkedListBag<Int>().iterator().next()
     }

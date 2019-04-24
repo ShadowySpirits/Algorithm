@@ -29,6 +29,7 @@ class ResizingArrayStackTest {
         assertEquals(stack.size(), 2)
     }
 
+    @Suppress("UNCHECKED_CAST")
     @Test
     fun testPush() {
         stack.push(1)
@@ -42,22 +43,22 @@ class ResizingArrayStackTest {
         stack.push(1)
         stack.push(2)
         stack.push(3)
-        assertEquals(stack.peek(), Integer.valueOf(3))
-        assertEquals(stack.pop(), Integer.valueOf(3))
-        assertEquals(stack.peek(), Integer.valueOf(2))
-        assertEquals(stack.pop(), Integer.valueOf(2))
-        assertEquals(stack.peek(), Integer.valueOf(1))
-        assertEquals(stack.pop(), Integer.valueOf(1))
+        assertEquals(stack.peek(), 3)
+        assertEquals(stack.pop(), 3)
+        assertEquals(stack.peek(), 2)
+        assertEquals(stack.pop(), 2)
+        assertEquals(stack.peek(), 1)
+        assertEquals(stack.pop(), 1)
 
-        stack.pop();
-        stack.pop();
-        stack.pop();
+        stack.pop()
+        stack.pop()
+        stack.pop()
 //        val field = stack::class.memberProperties.findLast { it.name.equals("a") }
 //        field!!.isAccessible = true
 //        val a = (field as KProperty1<ResizingArrayStack<Int>, Array<Object>>).get(stack)
         val field = ResizingArrayStack::class.java.getDeclaredField("a")
         field.isAccessible = true
-        val a = field.get(stack) as Array<Object>
+        val a = field.get(stack) as Array<Any>
         assertEquals(a.size, 8)
     }
 
@@ -78,8 +79,8 @@ class ResizingArrayStackTest {
         stack.push(2)
         stack.push(3)
         for (item in stack) {
-            assertEquals(item, Integer.valueOf(i--))
+            assertEquals(item, i--)
         }
-        ResizingArrayStack<Int>().iterator().next();
+        ResizingArrayStack<Int>().iterator().next()
     }
 }

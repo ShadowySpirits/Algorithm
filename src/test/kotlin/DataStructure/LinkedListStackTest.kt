@@ -31,16 +31,16 @@ class LinkedListStackTest {
     @Test
     fun testPush() {
         stack.push(1)
-        assertEquals(stack.pop(), Integer.valueOf(1))
+        assertEquals(stack.pop(), 1)
         stack.push(1)
         stack.push(2)
         stack.push(3)
-        assertEquals(stack.peek(), Integer.valueOf(3))
-        assertEquals(stack.pop(), Integer.valueOf(3))
-        assertEquals(stack.peek(), Integer.valueOf(2))
-        assertEquals(stack.pop(), Integer.valueOf(2))
-        assertEquals(stack.peek(), Integer.valueOf(1))
-        assertEquals(stack.pop(), Integer.valueOf(1))
+        assertEquals(stack.peek(), 3)
+        assertEquals(stack.pop(), 3)
+        assertEquals(stack.peek(), 2)
+        assertEquals(stack.pop(), 2)
+        assertEquals(stack.peek(), 1)
+        assertEquals(stack.pop(), 1)
     }
 
     @Test
@@ -60,8 +60,8 @@ class LinkedListStackTest {
         stack.push(2)
         stack.push(3)
         for (item in stack) {
-            assertEquals(item, Integer.valueOf(i--))
+            assertEquals(item, i--)
         }
-        LinkedListStack<Int>().iterator().next();
+        LinkedListStack<Int>().iterator().next()
     }
 }
