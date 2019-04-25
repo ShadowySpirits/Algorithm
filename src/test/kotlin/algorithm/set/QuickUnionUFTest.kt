@@ -15,9 +15,8 @@ class QuickUnionUFTest {
         uf = QuickUnionUF(reader.readLine().toInt())
         while (true) {
             reader.readLine()?.let {
-                val l = it.split(' ')
-                val p = l[0].toInt()
-                val q = l[1].toInt()
+                val p = it.substringBefore(' ').toInt()
+                val q = it.substringAfter(' ').toInt()
                 if (uf.connected(p, q)) return@let
                 uf.union(p, q)
             } ?: break
