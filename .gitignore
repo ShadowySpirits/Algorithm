@@ -26,4 +26,4 @@ out
 gen
 target
 
-detekt-config.yml
+detekt*
