@@ -1,6 +1,5 @@
 package algorithm.set
 
-import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
 import java.io.File
 import kotlin.test.assertEquals
@@ -8,7 +7,6 @@ import kotlin.test.assertEquals
 class QuickFindUFTest {
     private lateinit var uf: QuickFindUF
 
-    @BeforeMethod
     fun setUp() {
         val file = File("src/test/kotlin/algorithm/set/mediumUF.txt")
         val reader = file.bufferedReader()
@@ -26,6 +24,7 @@ class QuickFindUFTest {
 
     @Test
     fun test() {
+        setUp()
         assertEquals(3, uf.count())
     }
 }

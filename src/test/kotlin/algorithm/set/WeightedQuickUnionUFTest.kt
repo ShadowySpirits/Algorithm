@@ -1,14 +1,12 @@
 package algorithm.set
 
 import org.testng.Assert.assertEquals
-import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
 import java.io.File
 
 class WeightedQuickUnionUFTest {
     private lateinit var uf: WeightedQuickUnionUF
 
-    @BeforeMethod
     fun setUp() {
         val file = File("src/test/kotlin/algorithm/set/mediumUF.txt")
         val reader = file.bufferedReader()
@@ -26,6 +24,7 @@ class WeightedQuickUnionUFTest {
 
     @Test
     fun test() {
+        setUp()
         assertEquals(3, uf.count())
     }
 }
