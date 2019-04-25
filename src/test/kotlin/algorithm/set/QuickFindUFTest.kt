@@ -22,6 +22,7 @@ class QuickFindUFTest {
                 uf.union(p, q)
             } ?: break
         }
+        reader.close()
     }
 
     @Test

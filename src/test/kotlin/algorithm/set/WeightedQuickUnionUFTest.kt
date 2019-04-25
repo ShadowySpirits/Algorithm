@@ -22,6 +22,7 @@ class WeightedQuickUnionUFTest {
                 uf.union(p, q)
             } ?: break
         }
+        reader.close()
     }
 
     @Test
