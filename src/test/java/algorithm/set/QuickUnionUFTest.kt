@@ -8,7 +8,7 @@ class QuickUnionUFTest {
     private lateinit var uf: QuickUnionUF
 
     fun setUp() {
-        val file = File("src/test/kotlin/algorithm/set/mediumUF.txt")
+        val file = File("src/test/java/algorithm/set/mediumUF.txt")
         val reader = file.bufferedReader()
         uf = QuickUnionUF(reader.readLine().toInt())
         while (true) {

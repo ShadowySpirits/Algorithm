@@ -1,16 +1,16 @@
 package algorithm.set
 
-import org.testng.Assert.assertEquals
 import org.testng.annotations.Test
 import java.io.File
+import kotlin.test.assertEquals
 
-class WeightedQuickUnionUFTest {
-    private lateinit var uf: WeightedQuickUnionUF
+class QuickFindUFTest {
+    private lateinit var uf: QuickFindUF
 
     fun setUp() {
-        val file = File("src/test/kotlin/algorithm/set/mediumUF.txt")
+        val file = File("src/test/java/algorithm/set/mediumUF.txt")
         val reader = file.bufferedReader()
-        uf = WeightedQuickUnionUF(reader.readLine().toInt())
+        uf = QuickFindUF(reader.readLine().toInt())
         while (true) {
             reader.readLine()?.let {
                 val p = it.substringBefore(' ').toInt()

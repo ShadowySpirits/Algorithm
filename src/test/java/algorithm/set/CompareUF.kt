@@ -28,7 +28,7 @@ class CompareUF {
             totalMEM += timer.usedMemory()
         }
         totalMEM /= 1000
-        println("WQU:")
+        println("QF:")
         println("time: $totalTime ms")
         println("MEM: ${totalMEM.format(4)} mb")
         println()
@@ -53,7 +53,7 @@ class CompareUF {
             totalMEM += timer.usedMemory()
         }
         totalMEM /= 1000
-        println("WQU:")
+        println("QU:")
         println("time: $totalTime ms")
         println("MEM: ${totalMEM.format(4)} mb")
         println()
@@ -86,7 +86,7 @@ class CompareUF {
 
     @Test
     fun compare() {
-        val file = File("src/test/kotlin/algorithm/set/mediumUF.txt")
+        val file = File("src/test/java/algorithm/set/mediumUF.txt")
         val reader = file.bufferedReader()
         reader.mark(file.length().toInt() + 1)
         QF(reader)
