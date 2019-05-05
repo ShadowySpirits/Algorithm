@@ -1,8 +1,8 @@
 package algorithm.set
 
+import org.testng.Assert.assertEquals
 import org.testng.annotations.Test
 import java.io.File
-import kotlin.test.assertEquals
 
 class QuickFindUFTest {
     private lateinit var uf: QuickFindUF
