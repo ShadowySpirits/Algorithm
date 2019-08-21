@@ -15,7 +15,7 @@ import java.util.NoSuchElementException;
 public class ResizingArrayDeque<Item> implements Queue<Item> {
 
     @SuppressWarnings("unchecked")
-    private Item[] a = (Item[]) new Object[4];
+    private Item[] a = (Item[]) new Object[16];
     private int head;
     private int tail;
 
@@ -26,7 +26,7 @@ public class ResizingArrayDeque<Item> implements Queue<Item> {
 
     @Override
     public int size() {
-        return (tail - head) & (a.length - 1);
+        return (tail - head + a.length) % a.length;
     }
 
     private void resize(int len) {

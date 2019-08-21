@@ -15,7 +15,7 @@ import java.util.NoSuchElementException;
 public class ResizingArrayStack<Item> implements Stack<Item> {
 
     @SuppressWarnings("unchecked")
-    private Item[] a = (Item[]) new Object[1];
+    private Item[] a = (Item[]) new Object[16];
     private int n;
 
     @Override
