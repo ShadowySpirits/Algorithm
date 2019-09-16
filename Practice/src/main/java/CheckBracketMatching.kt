@@ -1,4 +1,4 @@
-import DataStructure.LinkedListStack
+import stack.LinkedListStack
 
 class CheckBracketMatching {
 
