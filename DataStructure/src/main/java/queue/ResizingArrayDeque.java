@@ -1,4 +1,4 @@
-package Queue;
+package queue;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -36,7 +36,7 @@ public class ResizingArrayDeque<Item> implements Queue<Item> {
 //        for (int i = 0; i < a.length; i++) {
 //            temp[i] = a[i];
 //        }
-        // can use System.arraycopy() to instead manual array copy.
+//         can use System.arraycopy() to instead manual array copy.
         System.arraycopy(a, head, temp, 0, n);
         System.arraycopy(a, 0, temp, n, tail);
         head = 0;

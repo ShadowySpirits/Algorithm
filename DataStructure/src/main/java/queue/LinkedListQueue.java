@@ -1,4 +1,4 @@
-package Queue;
+package queue;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.jetbrains.annotations.NotNull;
