@@ -13,7 +13,7 @@ class SortCompare {
     private lateinit var f: Array<Int>
 
     companion object {
-        private const val ARRAY_COUNT = 10000
+        private const val ARRAY_COUNT = 10_000
     }
 
     private fun getSortList(): Array<Int> {

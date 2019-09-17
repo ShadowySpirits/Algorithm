@@ -13,6 +13,19 @@ fun <T : Comparable<T>> insertionSort(a: Array<T>) {
     }
 }
 
+fun <T : Comparable<T>> insertionSort(a: Array<T>, f: Int, e: Int) {
+    if (e - f + 1 <= 1) return
+    for (i in f..e) {
+        val value = a[i]
+        var j = i - 1
+        while (j >= f && a[j] > value) {
+            a[j + 1] = a[j]
+            --j
+        }
+        a[j + 1] = value
+    }
+}
+
 fun <T : Comparable<T>> shellSort(a: Array<T>) {
     if (a.size <= 1) return
     var gap = a.size / 2

@@ -3,71 +3,72 @@ package sort
 import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
 import java.util.*
+import kotlin.test.assertTrue
 
 class SortTest {
+    private val init = getRandomArray()
     private lateinit var a: Array<Int>
+    private lateinit var b: Array<Int>
 
     companion object {
-        private const val ARRAY_COUNT = 10000
+        private const val ARRAY_COUNT = 10_000
     }
 
-    private fun getSortList(): Array<Int> {
+    private fun getRandomArray(): Array<Int> {
         val ra = Random()
         return Array(ARRAY_COUNT) {
             return@Array ra.nextInt(ARRAY_COUNT * 10)
         }
     }
 
+    private fun getOrderedArray(): Array<Int> {
+        var i = 0
+        return Array(ARRAY_COUNT) {
+            return@Array i++
+        }
+    }
+
     @BeforeMethod
     fun setUp() {
-        a = getSortList()
+        a = init.copyOf()
+        b = a.copyOf()
+        b.sort()
     }
 
     @Test
     fun testBubbleSort() {
-        val b = a.copyOf()
         bubbleSort(a)
-        b.sort()
-        assert(a.contentEquals(b))
+        assertTrue(a.contentEquals(b))
     }
 
     @Test
     fun testInsertSort() {
-        val b = a.copyOf()
         insertionSort(a)
-        b.sort()
-        assert(a.contentEquals(b))
+        assertTrue(a.contentEquals(b))
     }
 
     @Test
     fun testShellSort() {
-        val b = a.copyOf()
         shellSort(a)
-        b.sort()
-        assert(a.contentEquals(b))
+        assertTrue(a.contentEquals(b))
     }
 
     @Test
     fun testSelectionSort() {
-        val b = a.copyOf()
         selectionSort(a)
-        b.sort()
-        assert(a.contentEquals(b))
+        assertTrue(a.contentEquals(b))
     }
+
 
     @Test
     fun testMergeSort() {
-        val b = a.copyOf()
         mergeSort(a)
-        b.sort()
-        assert(a.contentEquals(b))
+        assertTrue(a.contentEquals(b))
     }
 
     @Test
     fun testQuickSort() {
-        val b = a.copyOf()
         quickSort(a)
-        b.sort()
-        assert(a.contentEquals(b))
+        assertTrue(a.contentEquals(b))
     }
 }
