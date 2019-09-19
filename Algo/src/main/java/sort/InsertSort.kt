@@ -13,12 +13,12 @@ fun <T : Comparable<T>> insertionSort(a: Array<T>) {
     }
 }
 
-fun <T : Comparable<T>> insertionSort(a: Array<T>, f: Int, e: Int) {
-    if (e - f + 1 <= 1) return
-    for (i in f..e) {
+fun <T : Comparable<T>> insertionSort(a: Array<T>, low: Int, high: Int) {
+    if (high - low + 1 <= 1) return
+    for (i in low..high) {
         val value = a[i]
         var j = i - 1
-        while (j >= f && a[j] > value) {
+        while (j >= low && a[j] > value) {
             a[j + 1] = a[j]
             --j
         }

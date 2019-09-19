@@ -6,36 +6,36 @@ fun <T : Comparable<T>> quickSort(a: Array<T>) {
     quickSortInternally(a, 0, a.size - 1)
 }
 
-private fun <T : Comparable<T>> quickSortInternally(a: Array<T>, f: Int, e: Int) {
-    if (e - f <= CUT_OFF) {
-        insertionSort(a, f, e)
+private fun <T : Comparable<T>> quickSortInternally(a: Array<T>, low: Int, high: Int) {
+    if (high - low <= CUT_OFF) {
+        insertionSort(a, low, high)
         return
     }
-    val pivot = partition(a, f, e)
-    quickSortInternally(a, f, pivot - 1)
-    quickSortInternally(a, pivot + 1, e)
+    val pivot = partition(a, low, high)
+    quickSortInternally(a, low, pivot - 1)
+    quickSortInternally(a, pivot + 1, high)
 }
 
-private fun <T : Comparable<T>> partition(a: Array<T>, f: Int, e: Int): Int {
-    val mid = (f + e) / 2
-    if (a[mid] < a[f]) {
-        exchange(a, mid, f)
+private fun <T : Comparable<T>> partition(a: Array<T>, low: Int, high: Int): Int {
+    val mid = (low + high) / 2
+    if (a[mid] < a[low]) {
+        exchange(a, mid, low)
     }
-    if (a[e] < a[mid]) {
-        exchange(a, mid, e)
+    if (a[high] < a[mid]) {
+        exchange(a, mid, high)
     }
-    if (a[e] < a[f]) {
-        exchange(a, e, f)
+    if (a[high] < a[low]) {
+        exchange(a, high, low)
     }
-    exchange(a, mid, e)
-    var i = f
-    for (j in f until e) {
-        if (a[j] < a[e]) {
+    exchange(a, mid, high)
+    var i = low
+    for (j in low until high) {
+        if (a[j] < a[high]) {
             exchange(a, i, j)
             i++
         }
     }
-    exchange(a, i, e)
+    exchange(a, i, high)
     return i
 }
 
