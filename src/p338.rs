@@ -1,3 +1,5 @@
+///! 338. Counting Bits
+
 struct Solution;
 
 impl Solution {
@@ -28,7 +30,7 @@ impl Solution {
     // } else {
     //     count[i - 1] + 1
     // };
-    pub fn dp(n: i32) -> Vec<i32> {
+    pub fn dp(_n: i32) -> Vec<i32> {
         unimplemented!()
     }
 }
