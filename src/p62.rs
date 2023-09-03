@@ -10,7 +10,8 @@ impl Solution {
     // a b b a a b b
     // In this case, we have three number of a and four number of b
     //
-    // So that the problem is the number of possible unique combinations that subsets of a insert into b
+    // So that the problem is the number of possible unique combinations that
+    // subsets of a insert into b
     pub fn unique_paths(m: i32, n: i32) -> i32 {
         if m == 1 || n == 1 {
             return 1;
@@ -19,12 +20,7 @@ impl Solution {
         let max = max(m, n);
         let mut res = 0;
         for i in 1..=min {
-            let count = if i == 1 {
-                1
-            } else {
-                Self::combo(min - 1, i - 1)
-            };
-            res += count * Self::combo(max, i);
+            res += Self::combo(min - 1, i - 1) * Self::combo(max, i);
         }
         res
     }
