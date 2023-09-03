@@ -8,6 +8,8 @@ struct Solution;
 struct DP {
     source: String,
     dictionary: HashSet<String>,
+    // we need this cache because of starting search from the beginning of source string, aka, top down dynamic programming.
+    // if we search from end to start, there is no duplicated calculating, and therefore no need for a cache
     cache: HashMap<usize /* index */, i32 /* result */>,
 }
 
@@ -26,6 +28,7 @@ impl DP {
         // check each substring which start with index "start"
         for i in start + 1..=end {
             // check if range [start, i) is a valid word
+            // TODO: use trie tree instead of substring
             if self.dictionary.contains(&self.source[start..i]) {
                 // calculate result of next index of current word
                 // And then take the smaller number as the final result
