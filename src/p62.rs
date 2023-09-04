@@ -37,7 +37,7 @@ impl Solution {
 
     fn combo(n: i32, m: i32) -> i32 {
         if n < m {
-            panic!("n should be larger than m in combo calculating")
+            panic!("n should be larger than m in combinatorial calculating")
         }
 
         let n = n as u128;
