@@ -1,3 +1,5 @@
+package list
+
 // 138. Copy List with Random Pointer
 
 /**
@@ -19,7 +21,7 @@ class Node(var `val`: Int) {
 class Solution {
     fun copyRandomList(node: Node?): Node? {
         val map = HashMap<Node /* old node */, Node /* corresponding new node */>()
-        val newHead = node?.let {Node(it.`val`) }
+        val newHead = node?.let { Node(it.`val`) }
         newHead?.next = node?.next
 
         var oldNode = node
