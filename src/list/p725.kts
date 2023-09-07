@@ -20,7 +20,7 @@ class Solution {
     fun splitListToParts(head: ListNode?, k: Int): Array<ListNode?> {
         val res = arrayOfNulls<ListNode?>(k)
 
-        // calculate linked list length
+        // length of total linked list
         var len = 0
         var tmpNode = head
         while (tmpNode != null) {
@@ -28,9 +28,9 @@ class Solution {
             tmpNode = tmpNode.next
         }
 
-        // calculate parted linked list length
+        // length of parted linked list
         var partLen = len / k
-        // calculate count of longer part
+        // count of longer part
         var longerPart = 0
         if (len < k) {
             partLen += 1
