@@ -2,7 +2,7 @@
 
 use std::cmp::{max, min};
 
-struct Solution;
+pub struct Solution;
 
 impl Solution {
     // If we mark the down step as a and the right step as b.
@@ -35,7 +35,7 @@ impl Solution {
         Self::combo(m + n - 2, m - 1)
     }
 
-    fn combo(n: i32, m: i32) -> i32 {
+    pub fn combo(n: i32, m: i32) -> i32 {
         if n < m {
             panic!("n should be larger than m in combinatorial calculating")
         }
