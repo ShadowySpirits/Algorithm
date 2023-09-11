@@ -2,3 +2,4 @@
 
 mod string;
 mod math;
+mod array;
