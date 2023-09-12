@@ -7,7 +7,8 @@ pub struct Solution;
 impl Solution {
     pub fn group_the_people(group_sizes: Vec<i32>) -> Vec<Vec<i32>> {
         // Map<group_size, people_vec>
-        // Because order does not matter, HashMap is okay, but using TreeMap this time just to let the test pass.
+        // Because order does not matter, HashMap is okay,
+        // but using TreeMap this time just to let the test pass.
         let mut map = BTreeMap::new();
         for (i, size) in group_sizes.iter().enumerate() {
             map.entry(*size)
