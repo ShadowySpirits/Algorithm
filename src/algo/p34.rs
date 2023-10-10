@@ -5,7 +5,7 @@ use std::cmp::Ordering;
 pub struct Solution;
 
 impl Solution {
-    fn binary_search(nums: &Vec<i32>, target: i32) -> Option<i32> {
+    fn binary_search(nums: &Vec<i32>, target: i32) -> Option<usize> {
         if nums.is_empty() {
             return None;
         }
@@ -15,7 +15,7 @@ impl Solution {
         while left < right {
             match nums[mid].cmp(&target) {
                 Ordering::Less => left = mid + 1,
-                Ordering::Equal => return Some(mid as i32),
+                Ordering::Equal => return Some(mid),
                 Ordering::Greater => right = mid,
             }
             mid = (left + right) / 2;
@@ -29,12 +29,12 @@ impl Solution {
             None => vec![-1, -1],
             Some(index) => {
                 // search left
-                let mut left = index as usize;
+                let mut left = index;
                 while left > 0 && nums[left - 1] == target {
                     left -= 1;
                 }
                 // search right
-                let mut right = index as usize;
+                let mut right = index;
                 while right < nums.len() - 1 && nums[right + 1] == target {
                     right += 1;
                 }
