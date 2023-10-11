@@ -8,7 +8,7 @@ pub struct Solution;
 impl Solution {
     /// Returns the index of a number that is less than or equal to a given upper bound.
     /// Returns None if the upper bound is less than all numbers in nums.
-    fn binary_search(nums: &Vec<i32>, upper_bound: i32) -> Option<usize> {
+    pub fn binary_search(nums: &Vec<i32>, upper_bound: i32) -> Option<usize> {
         let (mut left, mut right) = (0, nums.len());
         let mut mid = (left + right) / 2;
 

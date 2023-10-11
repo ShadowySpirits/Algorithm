@@ -1,4 +1,4 @@
 // Binary search range
-mod p34;
+pub mod p34;
 // Binary search with upper bound
-mod p2009;
+pub mod p2009;
