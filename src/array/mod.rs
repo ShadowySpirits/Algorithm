@@ -9,3 +9,5 @@ mod p1458;
 mod p2251;
 // Binary search
 mod p852;
+// Binary search
+mod p1095;
