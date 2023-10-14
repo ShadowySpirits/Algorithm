@@ -49,14 +49,14 @@ impl Solution {
         None
     }
 
-    pub fn find_in_mountain_array(target: i32, mountainArr: &MountainArray) -> i32 {
+    pub fn find_in_mountain_array(target: i32, mountain_arr: &MountainArray) -> i32 {
         // Step1. Find the peak, see p852 for details.
-        let peak_index = Self::find_peak_index(mountainArr);
+        let peak_index = Self::find_peak_index(mountain_arr);
         // Step2. Binary search in the left part.
-        let left = Self::binary_search(target, mountainArr, 0, peak_index);
+        let left = Self::binary_search(target, mountain_arr, 0, peak_index);
         // Step3. If find nothing, then binary search in the right part.
         if left.is_none() {
-            return Self::binary_search(target, mountainArr, peak_index + 1, mountainArr.length() - 1).unwrap();
+            return Self::binary_search(target, mountain_arr, peak_index + 1, mountain_arr.length() - 1).unwrap();
         }
 
         left.unwrap()
