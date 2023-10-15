@@ -38,6 +38,7 @@ impl DP {
 }
 
 impl Solution {
+    // Similar with p2742.
     pub fn num_ways(steps: i32, arr_len: i32) -> i32 {
         let mut dp = DP {
             steps,

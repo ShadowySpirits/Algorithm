@@ -11,7 +11,3 @@ mod p2251;
 mod p852;
 // Binary search
 mod p1095;
-// dp
-mod p746;
-// dp
-mod p2742;
