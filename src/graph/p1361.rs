@@ -34,6 +34,13 @@ impl Solution {
         left_result && right_result
     }
 
+    // A validated binary tree should:
+    // 1. no dangling node
+    // 2. no cycle
+    // 3. have and only have a root node with no incoming edge
+    // 4. each node has at most two outgoing edges
+    //
+    // We need to verify 1~3.
     pub fn validate_binary_tree_nodes(n: i32, left_child: Vec<i32>, right_child: Vec<i32>) -> bool {
         let root = Solution::find_root(n, &left_child, &right_child);
         if root.is_none() {
