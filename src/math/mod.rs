@@ -6,3 +6,7 @@ mod p338;
 mod p377;
 // dp, combinatorics
 mod p1359;
+
+// Power of 2&4
+mod p231;
+mod p342;
