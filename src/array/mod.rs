@@ -10,3 +10,4 @@ mod p852;
 // Binary search
 mod p1095;
 mod p844;
+mod p341;
