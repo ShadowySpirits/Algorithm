@@ -11,3 +11,5 @@ mod p852;
 mod p1095;
 mod p844;
 mod p341;
+// dfs, greedy
+mod p1793;
