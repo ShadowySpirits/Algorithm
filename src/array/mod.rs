@@ -5,11 +5,13 @@ mod p135;
 mod p1458;
 // Binary search
 mod p2251;
-// Binary search
+
+// Binary search, Mountain Array
 mod p852;
-// Binary search
 mod p1095;
+
 mod p844;
 mod p341;
+
 // dfs, greedy
 mod p1793;

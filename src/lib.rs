@@ -5,3 +5,4 @@ mod math;
 mod array;
 mod graph;
 mod dp;
+mod tree;
