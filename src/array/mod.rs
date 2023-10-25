@@ -15,3 +15,6 @@ mod p341;
 
 // dfs, greedy
 mod p1793;
+
+// dfs, binary search
+mod p779;
