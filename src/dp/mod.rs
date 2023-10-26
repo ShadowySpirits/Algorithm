@@ -6,3 +6,5 @@ mod p1269;
 // dp, Pascal's Triangle
 mod p118;
 mod p119;
+
+mod p1425;
