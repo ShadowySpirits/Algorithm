@@ -10,3 +10,6 @@ mod p1359;
 // Power of 2&4
 mod p231;
 mod p342;
+
+// Find the factor
+mod p507;

@@ -18,7 +18,6 @@ mod tests {
     use super::*;
 
     #[test]
-    #[allow(clippy::bool_assert_comparison)]
     fn test() {
         assert_eq!(Solution::is_power_of_four(1), true);
         assert_eq!(Solution::is_power_of_four(16), true);

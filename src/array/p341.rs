@@ -47,7 +47,6 @@ mod tests {
     use super::*;
 
     #[test]
-    #[allow(clippy::bool_assert_comparison)]
     fn test() {
         let nested_list = vec![
             NestedInteger::List(vec![NestedInteger::Int(1), NestedInteger::Int(1)]),

@@ -31,7 +31,6 @@ mod tests {
     use super::*;
 
     #[test]
-    #[allow(clippy::bool_assert_comparison)]
     fn test() {
         assert_eq!(Solution::backspace_compare("#".to_string(), "".to_string()), true);
         assert_eq!(Solution::backspace_compare("ab#c".to_string(), "ad#c".to_string()), true);

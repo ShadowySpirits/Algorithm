@@ -60,7 +60,6 @@ mod tests {
     use super::*;
 
     #[test]
-    #[allow(clippy::bool_assert_comparison)]
     fn test() {
         assert_eq!(Solution::validate_binary_tree_nodes(4, vec![1, -1, 3, -1], vec![2, -1, -1, -1]), true);
         assert_eq!(Solution::validate_binary_tree_nodes(4, vec![1, -1, 3, -1], vec![2, 3, -1, -1]), false);
