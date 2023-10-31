@@ -18,3 +18,8 @@ mod p342;
 // Find the factor
 mod p507;
 mod p458;
+
+// Binary Exponentiation
+mod p50;
+mod p372;
+

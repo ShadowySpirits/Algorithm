@@ -7,8 +7,8 @@ impl Solution {
         let mut res = Vec::with_capacity(pref.len());
         res.push(pref[0]);
 
-        for (i, value) in pref.iter().enumerate().skip(1) {
-            res.push(value ^ pref[i - 1]);
+        for i in 1..pref.len() {
+             res.push(pref[i] ^ pref[i - 1]);
         }
 
         res
