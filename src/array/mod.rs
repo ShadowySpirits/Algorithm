@@ -18,3 +18,5 @@ mod p1793;
 
 // dfs, binary search
 mod p779;
+
+mod p2433;
