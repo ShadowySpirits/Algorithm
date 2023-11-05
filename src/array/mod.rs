@@ -20,3 +20,4 @@ mod p1793;
 mod p779;
 mod p2433;
 mod p1441;
+mod p1535;
