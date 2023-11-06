@@ -7,3 +7,4 @@ mod array;
 mod graph;
 mod dp;
 mod tree;
+mod misc;
