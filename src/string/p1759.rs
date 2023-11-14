@@ -3,6 +3,7 @@
 pub struct Solution;
 
 impl Solution {
+    // A n length string has `(n + 1) * n / 2` non-empty substring and `1` empty substring.
     fn count_substring(n: i32) -> i32 {
         let n = n as u128;
         ((n + 1) * n / 2 % 1_000_000_007) as i32
