@@ -25,3 +25,6 @@ mod p1743;
 mod p1846;
 mod p815;
 mod p1788;
+
+// sliding window
+mod p1838;
