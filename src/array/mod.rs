@@ -34,3 +34,4 @@ mod p1814;
 // BFS
 mod p1424;
 mod p1630;
+mod p1561;
