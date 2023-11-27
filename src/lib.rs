@@ -8,3 +8,4 @@ mod graph;
 mod dp;
 mod tree;
 mod misc;
+mod matrix;
